@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <input type="number" id="num" />
+  <button onclick="adicionarNumero()">Adicionar Número</button>
+  <br />
+  <br />
+  <button onclick="calcular()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function adicionarNumero() {
+      var input = document.createElement("input");
+      input.type = "number";
+      input.className = "numero";
+      document.body.appendChild(input);
+    }
+
+    function calcular() {
+      var numeros = document.getElementsByClassName("numero");
+      var soma = 0;
+      for (var i = 0; i < numeros.length; i++) {
+        var valor = parseInt(numeros[i].value);
+        if (!isNaN(valor)) {
+          soma += valor;
+        }
+      }
+      document.getElementById("resultado").innerText = "O resultado é: " + soma;
+    }
+  </script>
+</body>
+</html>
