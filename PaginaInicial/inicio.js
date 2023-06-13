@@ -1,13 +1,6 @@
-
-// Dar vida ao botão média, eu poderia criar uma função construtora
-// Do que eu precisaria para criar uma função que navega entre páginas.
-
-
-
+// Botão para navegar até a média
 
 const botaoMedia = document.getElementById('botaoMedia')
-const botaoRegraDeTres = document.getElementById('botaoRegraDeTres')
-
 
 function irParaMedia() {
     setTimeout(function(){
@@ -16,3 +9,17 @@ function irParaMedia() {
 }
 
 botaoMedia.addEventListener('click', irParaMedia);
+
+
+
+// Botão para navegar até a regra de três
+
+const botaoRegraDeTres = document.getElementById('botaoRegraDeTres')
+
+function irParaRegraDeTres() {
+    setTimeout(function() {
+        window.location.href = "../RegraDeTres/regraDeTres.html";
+    }, 400);
+}
+
+botaoRegraDeTres.addEventListener('click', irParaRegraDeTres)
