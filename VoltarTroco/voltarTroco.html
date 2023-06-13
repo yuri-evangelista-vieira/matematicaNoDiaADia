@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltar Troco</title>
+
+    <link rel="stylesheet" href="voltarTroco.css">
+</head>
+<body>
+
+    <h1>Voltar Troco</h1>
+    <p>
+        Informe o valor total do pagamento e o <abbr title="valor recebido
+        pelo cliente">montante</abbr> entregue pelo cliente
+    </p>
+
+    <form>
+        <label for="montanteCliente">Valor entregue pelo cliente:</label>
+        <input type="number" id="montanteCliente">
+
+        <label for="totalPagamento">Valor total do pagamento:</label>
+        <input type="number" id="totalPagamento">
+
+        <label for="valorTroco">Troco:</label>
+        <h1 id="trocoH1"></h1>
+    </form>
+
+    <button id="botaoCalcular">calcular</button>
+
+    <script src="/VoltarTroco/voltarTroco.js"></script>
+</body>
+
+</html>

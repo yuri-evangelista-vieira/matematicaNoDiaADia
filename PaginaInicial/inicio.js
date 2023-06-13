@@ -1,4 +1,4 @@
-// Botão para navegar até a média
+// Botão para navegar até a aba média
 
 const botaoMedia = document.getElementById('botaoMedia')
 
@@ -12,7 +12,7 @@ botaoMedia.addEventListener('click', irParaMedia);
 
 
 
-// Botão para navegar até a regra de três
+// Botão para navegar até a aba regra de três
 
 const botaoRegraDeTres = document.getElementById('botaoRegraDeTres')
 
@@ -23,3 +23,16 @@ function irParaRegraDeTres() {
 }
 
 botaoRegraDeTres.addEventListener('click', irParaRegraDeTres)
+
+
+// Botão para navegar até a aba Voltar Troco
+
+const botaoVoltarTroco = document.getElementById('botaoVoltarTroco')
+
+function irParaVoltarTroco() {
+    setTimeout(function() {
+        window.location.href = "../VoltarTroco/voltarTroco.html";
+    }, 400); 
+}
+
+botaoVoltarTroco.addEventListener('click', irParaVoltarTroco)
