@@ -36,3 +36,16 @@ function irParaVoltarTroco() {
 }
 
 botaoVoltarTroco.addEventListener('click', irParaVoltarTroco)
+
+
+// Botão para navegar até a aba Ocupação do Hotel
+
+const botaoCalcularOcupacao = document.getElementById('botaoCalcularOcupacao')
+//seleciona, cria função e depois cria evento.
+function irParaOcupacao() {
+    setTimeout(function() {
+        window.location.href = "../Ocupacao/ocupacao.html"
+    }, 400)
+}
+
+botaoCalcularOcupacao.addEventListener('click', irParaOcupacao)
