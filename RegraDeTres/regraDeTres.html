@@ -7,12 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regra de três</title>
 
+    <link rel="icon" href="../Assets/Icones/calculator.ico" type="image/x-icon">
     <link rel="stylesheet" href="regraDeTres.css">
 </head>
 
 <body>
     <h1>Regra de Três.</h1>
     <p>Preencha os campos para obter o resultado da Regra de Três</p>
+    
+    <h2>O seu resultado é:</h2>
+    <div id="select-container">
+        <select id="menuSelecionarResultado">
+            <option>Apenas um número</option>
+            <option>Dinheiro</option>
+            <option>Dias</option>
+            <option>Horário</option>
+        </select>
+    </div>
 
     <form>
         <label for="valor1">Se:</label>

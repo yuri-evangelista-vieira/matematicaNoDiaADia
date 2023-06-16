@@ -14,13 +14,23 @@ h1 {
     color: #333;
     font-size: 2rem;
     margin-bottom: 1rem;
-    /* font-size: 25px; */
+}
+
+h2 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 p {
     color: #555;
     font-size: 1.1rem;
     margin-bottom: 2rem;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 form {
@@ -35,6 +45,7 @@ label {
     width: 100px;
     font-weight: bold;
     color: #333;
+    margin-bottom: 0.5rem;
 }
 
 input {
@@ -43,6 +54,15 @@ input {
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-bottom: 1rem;
+}
+
+select {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 #valorx {

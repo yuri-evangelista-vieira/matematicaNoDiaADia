@@ -14,6 +14,18 @@ function calcularRegraDeTres() {
         return;
     }
     const resultado = (valor2 * valor3) / valor1;
+
+    /**
+     * Preciso criar agora as estruturas de controle que vão:
+     * Mostrar na interface do usuário qual é o resultado que
+     * ele deseja que seja exibido. Se é dinheiro (vai aparecer
+     * em R$), Horário (que vai calcular em minutos, ou horas
+     * na regra de três) e, até o atual momento, os dias (que
+     * vai calcular quantos dias faltam ou quantos dias serão
+     * necessário)
+     * 
+     * Esse é o próximo passo para o aprimoramento do projeto.
+     */
     h1Resultado.textContent = `Resultado: ${resultado.toFixed(2)}`;
 }
 
