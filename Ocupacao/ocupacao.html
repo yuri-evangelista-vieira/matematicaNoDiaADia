@@ -6,8 +6,28 @@
     <title>Document</title>
 
     <link rel="icon" href="../Assets/Icones/calculator.ico" type="image/x-icon">
+    <link rel="stylesheet" href="ocupacao.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Ocupação do Hotel</h1>
+        <p>
+            Para calcular a ocupação do hotel você deve dividir o número de
+            hospedados pelo número total de apartamentos.
+        </p>
+    </header>
+
+    <form>
+        <label for="hospedados">Hospedados:</label>
+        <input type="number" id="totalHospedados">
+
+        <label for="apTotais">Total de apartamentos:</label>
+        <input type="number" id="totalDeApartamentos">
+        <h1 id="valorOcupacao"></h1>
+    </form>
+
+    <button id="calcularOcupacao">calcular</button>
+
+
 </body>
 </html>
