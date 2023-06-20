@@ -1,7 +1,7 @@
 const formulario = document.getElementById('formulario')
 const botaoCalcular = document.getElementById('botaoCalcular')
 const botaoAdicionar = document.getElementById('botaoAdicionar')
-const botaoZerar = document.getElementById('botaoZerar')
+const removerUltimoCampo = document.getElementById('removerUltimoCampo')
 const h1Resultado = document.getElementById('valorMedia')
 
 let totalN = 4;
@@ -21,7 +21,7 @@ function adicionarNumero() {
     labelNums.textContent = 'n' + totalN + ': ';
     // labelNums.id = 'valor' = totalN;
     camposAdicionados.push(labelNums)
-    formulario.appendChild(labelNums);
+    formulario.insertBefore(labelNums, adicionarNumero);
     
     let campoNums = document.createElement('input');
     campoNums.type = 'number';
@@ -29,7 +29,7 @@ function adicionarNumero() {
     campoNums.className = 'numero';
     camposAdicionados.push(campoNums)
     
-    formulario.appendChild(campoNums);
+    formulario.insertBefore(campoNums, adicionarNumero);
     
     console.log(camposAdicionados)
     
@@ -41,9 +41,12 @@ botaoAdicionar.addEventListener('click', adicionarNumero);
 
 
 // adicionando o evento que vai remover o último campo adicionado.
-botaoZerar.addEventListener('click', function() {
-    const ultimoCampo = camposAdicionados.pop();
-    const ultimoLabel = camposAdicionados.pop();
+removerUltimoCampo.addEventListener('click', function() {
+    const ultimoCampoId = camposAdicionados.pop();
+    const ultimoLabelId = camposAdicionados.pop();
+
+    const ultimoCampo = document.getElementById(ultimoCampoId)
+    const ultimoLabel = document.querySelector(`label[for=${ultimoLabelId}]`)
 
     if(ultimoCampo && ultimoLabel) {
         ultimoCampo.remove();
