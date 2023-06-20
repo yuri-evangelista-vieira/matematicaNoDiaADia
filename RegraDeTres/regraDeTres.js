@@ -5,9 +5,9 @@ const tipoResultado = document.getElementById('tipoResultado')
 
 function calcularRegraDeTres() {
 
-    const valor1 = document.getElementById('valor1').value;
-    const valor2 = document.getElementById('valor2').value;
-    const valor3 = document.getElementById('valor3').value;
+    const valor1 = parseFloat(document.getElementById('valor1').value)
+    const valor2 = parseFloat(document.getElementById('valor2').value)
+    const valor3 = parseFloat(document.getElementById('valor3').value)
 
     if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3)) {
         alert('Por favor, preencha os campos corretamente.');

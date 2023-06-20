@@ -2,10 +2,10 @@ const botaoCalcular = document.getElementById('botaoCalcular')
 const trocoH1 = document.getElementById('trocoH1')
 
 function calcularTroco() {
-    const campoMontCliente = document.getElementById('montanteCliente').value;
-    const campoValorTotal = document.getElementById('totalPagamento').value;
+    const campoMontCliente = parseFloat(document.getElementById('montanteCliente').value)
+    const campoValorTotal = parseFloat(document.getElementById('totalPagamento').value)
     
-    if(campoMontCliente == "" || campoValorTotal == "") {
+    if(isNaN(campoMontCliente) || isNaN(campoValorTotal)) {
         alert ('Preencha todos os campos para mostrar quanto você deve devolver de troco para o cliente')
         return;
     }

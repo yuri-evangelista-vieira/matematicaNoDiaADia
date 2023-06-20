@@ -1,65 +1,87 @@
 const formulario = document.getElementById('formulario')
-const botaoCalcular = document.getElementById('botaoCalcular')
 const botaoAdicionar = document.getElementById('botaoAdicionar')
+const botaoCalcular = document.getElementById('botaoCalcular')
 const removerUltimoCampo = document.getElementById('removerUltimoCampo')
-const h1Resultado = document.getElementById('valorMedia')
+const valorMedia = document.getElementById('valorMedia')
 
-let totalN = 4;
-let camposAdicionados = [];
+let totalN = 3;
+let camposAdicionados = ['valor1', 'valor2', 'valor3'];
 
 
-// função para adicionar um novo campo
+
+// Função para adicionar um novo campo
+
 function adicionarNumero() {
-    if(totalN > 500) {
+    if (totalN > 500) {
         alert('Não é possível adicionar mais números');
         return;
     }
 
-    
-    let labelNums = document.createElement('label');
-    labelNums.htmlFor = 'numero' + totalN;
-    labelNums.textContent = 'n' + totalN + ': ';
-    // labelNums.id = 'valor' = totalN;
-    camposAdicionados.push(labelNums)
-    formulario.insertBefore(labelNums, adicionarNumero);
-    
-    let campoNums = document.createElement('input');
-    campoNums.type = 'number';
-    campoNums.id = 'valor' + totalN;
-    campoNums.className = 'numero';
-    camposAdicionados.push(campoNums)
-    
-    formulario.insertBefore(campoNums, adicionarNumero);
-    
+
+
+    let novoNumero = totalN + 1;
+
+    //criar novos elementos
+    let divN = document.createElement('div');
+    let labelN = document.createElement('label');
+    let inputN = document.createElement('input');
+
+
+    //personalizando div criada
+    divN.id = 'valor' + novoNumero
+    //personalizando label criado
+    labelN.htmlFor = 'valor' + novoNumero;
+    labelN.textContent = 'n' + novoNumero + ': ';
+    //personalizando input criado
+    inputN.type = 'number';
+    inputN.id = 'valor' + novoNumero;
+    inputN.className = 'numero';
+
+
+    //colocar label e input dentro da minha div.
+    formulario.appendChild(divN)
+    divN.appendChild(labelN)
+    divN.appendChild(inputN)
+
+    camposAdicionados.push('valor' + novoNumero)
+
     console.log(camposAdicionados)
-    
     totalN++
 }
 
-botaoAdicionar.addEventListener('click', adicionarNumero);
+botaoAdicionar.addEventListener('click', adicionarNumero)
 
 
 
-// adicionando o evento que vai remover o último campo adicionado.
-removerUltimoCampo.addEventListener('click', function() {
+// Adicionar o evento que vai remover o último campo adicionado
+removerUltimoCampo.addEventListener('click', function () {
+    if (totalN <= 3) {
+        alert('Não há campos adicionados para remover.')
+        return;
+    }
+
     const ultimoCampoId = camposAdicionados.pop();
-    const ultimoLabelId = camposAdicionados.pop();
 
     const ultimoCampo = document.getElementById(ultimoCampoId)
-    const ultimoLabel = document.querySelector(`label[for=${ultimoLabelId}]`)
+    ultimoCampo.remove()
 
-    if(ultimoCampo && ultimoLabel) {
-        ultimoCampo.remove();
-        ultimoLabel.remove();
-    }
+    totalN--
 })
 
 
 
-// função para calcular a média. 
+// Função para calcular a média.
 function calcularMedia() {
-    const campos = document.querySelectorAll('.numero');
-    let soma = 0;
+    const valor1 = parseFloat(document.getElementById('valor1').value)
+    const valor2 = parseFloat(document.getElementById('valor2').value)
+
+    if(isNaN(valor1) || isNaN(valor2)) {
+        alert('Preencha pelo menos o primeiro e o segundo campo para calcular a média')
+        return
+    }
+
+    const campos = document.querySelectorAll('.numero')
+    let soma = 0
 
     for (let i = 0; i < campos.length; i++) {
         soma += Number(campos[i].value)
@@ -67,8 +89,7 @@ function calcularMedia() {
 
     let resultado = soma / campos.length;
 
-    h1Resultado.textContent = resultado.toFixed(2);x
+    valorMedia.textContent = resultado.toFixed(2);
 }
-
 
 botaoCalcular.addEventListener('click', calcularMedia)

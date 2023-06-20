@@ -2,6 +2,15 @@ const botaoCalcular = document.getElementById('calcularOcupacao')
 const ocupacaoH1 = document.getElementById('valorOcupacao')
 
 function calcularOcupacao() {
+
+    const valorHospedados = parseFloat(document.getElementById('totalHospedados').value);
+    const valorTotalApt = parseFloat(document.getElementById('totalDeApartamentos').value);
+
+    if (isNaN(valorHospedados) || isNaN(valorTotalApt)) {
+        alert('Preencha todos os campos para realizar o cálculo')
+        return
+    }
+
     const totalHosp = document.getElementById('totalHospedados').value
     const totalApt = document.getElementById('totalDeApartamentos').value
 
