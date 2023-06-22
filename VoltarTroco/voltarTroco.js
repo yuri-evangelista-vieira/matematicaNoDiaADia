@@ -11,7 +11,7 @@ function calcularTroco() {
     }
 
     const calculoTroco = campoMontCliente - campoValorTotal;
-    trocoH1.textContent = `Troco: R$ ${calculoTroco}`
+    trocoH1.textContent = `Troco: R$ ${calculoTroco.toFixed(2)}`
 }
 
 
