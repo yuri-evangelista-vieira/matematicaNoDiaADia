@@ -34,7 +34,6 @@ function adicionarNumero() {
     labelN.textContent = 'n' + novoNumero + ': ';
     //personalizando input criado
     inputN.type = 'number';
-    inputN.id = 'valor' + novoNumero;
     inputN.className = 'numero';
 
 
@@ -55,7 +54,7 @@ botaoAdicionar.addEventListener('click', adicionarNumero)
 
 // Adicionar o evento que vai remover o último campo adicionado
 removerUltimoCampo.addEventListener('click', function () {
-    if (totalN <= 3) {
+    if (totalN <= 2) {
         alert('Não há campos adicionados para remover.')
         return;
     }
