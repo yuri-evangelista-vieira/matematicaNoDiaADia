@@ -1,5 +1,4 @@
 // Botão para navegar até a aba média
-
 const botaoMedia = document.getElementById('botaoMedia')
 
 function irParaMedia() {
@@ -13,7 +12,6 @@ botaoMedia.addEventListener('click', irParaMedia);
 
 
 // Botão para navegar até a aba regra de três
-
 const botaoRegraDeTres = document.getElementById('botaoRegraDeTres')
 
 function irParaRegraDeTres() {
@@ -25,8 +23,8 @@ function irParaRegraDeTres() {
 botaoRegraDeTres.addEventListener('click', irParaRegraDeTres)
 
 
-// Botão para navegar até a aba Voltar Troco
 
+// Botão para navegar até a aba Voltar Troco
 const botaoVoltarTroco = document.getElementById('botaoVoltarTroco')
 
 function irParaVoltarTroco() {
@@ -38,10 +36,10 @@ function irParaVoltarTroco() {
 botaoVoltarTroco.addEventListener('click', irParaVoltarTroco)
 
 
-// Botão para navegar até a aba Ocupação do Hotel
 
+// Botão para navegar até a aba Ocupação do Hotel
 const botaoCalcularOcupacao = document.getElementById('botaoCalcularOcupacao')
-//seleciona, cria função e depois cria evento.
+
 function irParaOcupacao() {
     setTimeout(function() {
         window.location.href = "../Ocupacao/ocupacao.html"
@@ -49,3 +47,15 @@ function irParaOcupacao() {
 }
 
 botaoCalcularOcupacao.addEventListener('click', irParaOcupacao)
+
+
+// Botão para navegar até a aba Gerar Escala
+const botaoGerarEscala = document.getElementById('botaoGerarEscala')
+
+function irParaGerarEscala() {
+    setTimeout(function() {
+        window.location.href = '../GerarEscala/gerarEscala.html'
+    }, 400)
+}
+
+botaoGerarEscala.addEventListener('click', irParaGerarEscala)
