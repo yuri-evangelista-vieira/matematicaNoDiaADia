@@ -5,17 +5,21 @@ const aptDisponiveisH2 = document.getElementById('aptDisponiveis')
 function calcularOcupacao() {
 
     const valorHospedados = parseFloat(document.getElementById('totalHospedados').value);
+    const valorChegadasEsperadas = parseFloat(document.getElementById('chegadasEsperadas').value);
     const valorTotalApt = parseFloat(document.getElementById('totalDeApartamentos').value);
 
-    if (isNaN(valorHospedados) || isNaN(valorTotalApt)) {
+    if (isNaN(valorHospedados) || isNaN(valorTotalApt) || isNaN(valorChegadasEsperadas)) {
         alert('Preencha todos os campos para realizar o cálculo')
         return
     }
 
     const totalHosp = document.getElementById('totalHospedados').value
     const totalApt = document.getElementById('totalDeApartamentos').value
+    const totalChegadas = document.getElementById('chegadasEsperadas').value
 
-    const calculoOcupacao = (totalHosp / totalApt) * 100
+    const somaHospedadosEChegadas = totalHosp + totalChegadas
+
+    const calculoOcupacao = (somaHospedadosEChegadas / totalApt) * 10
     const calculoAptDispo = totalApt - totalHosp
 
     ocupacaoH1.textContent = `Ocupação:${calculoOcupacao.toFixed(2)}%`

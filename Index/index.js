@@ -30,7 +30,7 @@ const botaoVoltarTroco = document.getElementById('botaoVoltarTroco')
 function irParaVoltarTroco() {
     setTimeout(function() {
         window.location.href = "../VoltarTroco/voltarTroco.html";
-    }, 400); 
+    }, 400);
 }
 
 botaoVoltarTroco.addEventListener('click', irParaVoltarTroco)
